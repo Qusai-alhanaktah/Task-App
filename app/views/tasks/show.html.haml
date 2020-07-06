@@ -1,0 +1,5 @@
+= form_with model: @task do |form|
+  .field
+    = form.label :description
+    = form.rich_text_area :description
+  = form.submit

@@ -1,0 +1,33 @@
+%h1 Edit Task
+= form_for @task do |f|
+  - if @task.errors.any?
+    .alert.callout{"data-abide-error" => ""}
+      - @task.errors.messages.each do |msg|
+        %p
+          %i.fi-alert
+          = msg[0]
+          \:
+          %strong= msg[1][0]
+          \!!
+  #container
+    .grid-x.grid-padding-x
+      .small-1.cell
+        = f.label :name
+      .small-3.cell
+        = f.text_field :name
+    .grid-x.grid-padding-x
+      .small-1.cell
+        = f.label :description
+      .small-3.cell
+        = f.text_field :description
+    .grid-x.grid-padding-x
+      .small-1.cell
+        = f.label :image
+      .small-3.cell
+        = f.file_field :image
+    - if @task.image.attached?
+      .grid-x.grid-padding-x
+        = image_tag @task.image
+    #btns-form.grid-x.grid-padding-x
+      = f.submit "Submit", class: 'success button'
+      = link_to 'Cancel', root_path, class: 'alert button'

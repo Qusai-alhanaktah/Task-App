@@ -1,0 +1,22 @@
+- if params[:controller] == 'tasks' && current_user
+  %h1 Tasks
+  - @tasks.each_slice(3) do |t|
+    .grid-container
+      .grid-x.grid-margin-x.small-up-2.medium-up-3
+        - t.each do |task|
+          .cell
+            .card
+              .card-divider
+                %h4= task.name
+              = image_tag task.image
+              .card-section
+                %p
+                  = task.description
+              - if current_user && current_user.admin
+                .button-group.align-center
+                  = link_to "Edit", edit_task_path(task.id),class: 'primary button', id:'btn-group'
+                  = link_to "Generate To PDF", task_path(task.id),class: 'success button', id:'btn-group'
+                  = link_to 'Delete', task, method: :delete , data: { confirm: 'Are you sure?' }, class: 'alert button'
+- else
+  %h1 Welcome To Logistaas
+  = image_tag('index.png')
