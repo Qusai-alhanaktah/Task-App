@@ -1,24 +1,11 @@
-# README
+# Task App with Ruby on Rails 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Author: Qusai-Alhanaktah
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Full-CRUD App with:
+1. psql DB
+2. Full authentication system (different capability for user & admin)
+3. Upload any file, folder or images.
+4. Text Editor
+5. convert from html to pdf
