@@ -9,3 +9,4 @@
 3. Upload any file, folder or images.
 4. Text Editor
 5. convert from html to pdf
+6. make a style by fondation
